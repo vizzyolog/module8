@@ -43,10 +43,9 @@ func (p *androidPhone) Model() string { return p.phModel }
 func (p *androidPhone) Type() string  { return "smartphone" }
 func (p *androidPhone) OS() string    { return "Android" }
 
-func (p *radioPhone) Brand() string { return p.phBrand }
-func (p *radioPhone) Model() string { return p.phModel }
-func (p *radioPhone) Type() string  { return "station" }
-
+func (p *radioPhone) Brand() string     { return p.phBrand }
+func (p *radioPhone) Model() string     { return p.phModel }
+func (p *radioPhone) Type() string      { return "station" }
 func (p *radioPhone) ButtonsCount() int { return p.buttonsAmount }
 
 //NewApplePhone - make iPhone :)
