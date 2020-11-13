@@ -10,7 +10,7 @@ func main() {
 	newIPhone := elec.NewApplePhone("iPhone")
 	printCharacteristics(newIPhone)
 
-	newAndroid := elec.NewAndroidPhone("Meizu", "M5", "Android v51")
+	newAndroid := elec.NewAndroidPhone("Meizu", "M5")
 	printCharacteristics(newAndroid)
 
 	newRadio := elec.NewRadioPhone("Радиотехника", "42", 5)

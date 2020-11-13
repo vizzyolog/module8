@@ -16,8 +16,6 @@ type Smartphone interface {
 type baseSmartphone struct {
 	phBrand string
 	phModel string
-	phType  string
-	phOS    string
 }
 
 type applePhone struct {
@@ -29,9 +27,9 @@ type androidPhone struct {
 }
 
 type radioPhone struct {
-	phBrand       string
-	phModel       string
-	phType        string
+	phBrand string
+	phModel string
+
 	buttonsAmount int
 }
 
@@ -43,11 +41,11 @@ func (p *applePhone) OS() string    { return "iOS" }
 func (p *androidPhone) Brand() string { return p.phBrand }
 func (p *androidPhone) Model() string { return p.phModel }
 func (p *androidPhone) Type() string  { return "smartphone" }
-func (p *androidPhone) OS() string    { return p.phOS }
+func (p *androidPhone) OS() string    { return "Android" }
 
 func (p *radioPhone) Brand() string { return p.phBrand }
 func (p *radioPhone) Model() string { return p.phModel }
-func (p *radioPhone) Type() string  { return "smartphone" }
+func (p *radioPhone) Type() string  { return "station" }
 
 func (p *radioPhone) ButtonsCount() int { return p.buttonsAmount }
 
@@ -60,11 +58,10 @@ func NewApplePhone(model string) *applePhone {
 }
 
 //NewAndroidPhone - make androidPhone :(
-func NewAndroidPhone(brand, model, os string) *androidPhone {
+func NewAndroidPhone(brand, model string) *androidPhone {
 	android := new(androidPhone)
 	android.phBrand = brand
 	android.phModel = model
-	android.phOS = os
 
 	return android
 }
